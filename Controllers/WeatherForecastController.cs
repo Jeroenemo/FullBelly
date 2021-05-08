@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using FullBelly.Models;
 
-namespace FullBelly.Solution.Controllers
+namespace FullBelly.Controllers
 {
     [ApiController]
     [Route("[controller]")]

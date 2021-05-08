@@ -1,6 +1,6 @@
 using System;
 
-namespace FullBelly.Solution
+namespace FullBelly.Models
 {
     public class WeatherForecast
     {

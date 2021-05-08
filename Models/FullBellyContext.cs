@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FullBelly.Models
 {
-    public class FullBellyContext : IdentityDbContext
+    public class FullBellyContext : DbContext
     {
         public FullBellyContext(DbContextOptions<FullBellyContext> options) : base(options) { }
         public DbSet<Donation> Donations { get; set; }
