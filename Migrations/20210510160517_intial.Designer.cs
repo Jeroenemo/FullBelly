@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FullBelly.Migrations
 {
     [DbContext(typeof(FullBellyContext))]
-    [Migration("20210508021853_intial")]
+    [Migration("20210510160517_intial")]
     partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
