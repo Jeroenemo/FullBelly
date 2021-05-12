@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FullBelly.Models;
-using System;
 
 namespace FullBelly.Controllers
 {
@@ -14,7 +13,6 @@ namespace FullBelly.Controllers
     public class UsersController : ControllerBase
     {
         private readonly FullBellyContext _db;
-
         public UsersController(FullBellyContext db)
         {
             _db = db;
