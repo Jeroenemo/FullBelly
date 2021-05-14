@@ -8,12 +8,13 @@ import './../styles/App.css'
 
 
 export default function App() {
-  
-
 
   return (
     <>
     <Header />
+    <Jumbotron>
+      <DonationControl />
+    </Jumbotron>
     <Footer />
     </>
   );
