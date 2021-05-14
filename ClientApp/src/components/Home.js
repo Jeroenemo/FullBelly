@@ -10,6 +10,7 @@ export default function Home() {
         alt=""
         src={Piggy}
         />
+        <h1 className="slogan">every positive change begins with a fullbelly</h1>
     </>
   )
 }

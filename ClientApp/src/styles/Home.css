@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
 .main-logo {
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  Display: flex;
+  Width: 525px;
+  margin: -5% 0 0 30%; 
+  Align-Items: center;
+  Justify-Content: center;
+}
+
+.slogan {
+  text-align: center;
+  font-family: 'Titan One', cursive;
+  text-shadow: 2px 2px 4px maroon;
+
+  color: #eabebe;
 }
