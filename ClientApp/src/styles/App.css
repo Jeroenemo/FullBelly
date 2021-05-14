@@ -1,0 +1,10 @@
+body {
+  background-color: #FFE4DC;
+}
+
+.jumbotron {
+  background-color: white;
+  margin: 0 10% 5% 10%;
+  height: 80vh;
+  box-shadow: 0 6px 6px -6px black;
+}

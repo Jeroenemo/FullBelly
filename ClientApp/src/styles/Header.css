@@ -1,0 +1,12 @@
+.nav-bar {
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 6px 6px -6px black;
+  margin: 5% 10% 1% 10%;
+
+}
+
+.nav-item {
+  margin-top: 18px;
+  font-size: 1.5rem;
+}
