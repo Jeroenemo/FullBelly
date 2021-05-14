@@ -5,6 +5,7 @@ import Logo from './../img/header.png';
 import { Jumbotron, Nav, Navbar } from 'react-bootstrap';
 import { Switch, Route, Link } from 'react-router-dom';
 import './../styles/Header.css';
+import DonationList from './DonationList';
 
 export default function Header() {
 
@@ -20,17 +21,18 @@ export default function Header() {
           <Nav.Link as={Link} to="/home">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/form">Make a Donation</Nav.Link>
+          <Nav.Link href="/find">Find Donations</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/manage">Manage Donations</Nav.Link>
+          <Nav.Link href="/form">Make a Donation</Nav.Link>
         </Nav.Item>
       </Nav>
     </Navbar>
     <Switch>
-      <Jumbotron className="jumbotron">
+      <Jumbotron>
         <Route exact path="/home" component={Home} />
         <Route exact path="/form" component={DonationForm} />
+        <Route exact path="/find" component={DonationList} />
       </Jumbotron>
     </Switch>
     </>
