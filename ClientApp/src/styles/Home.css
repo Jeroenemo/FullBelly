@@ -11,7 +11,5 @@
 .slogan {
   text-align: center;
   font-family: 'Titan One', cursive;
-  text-shadow: 2px 2px 4px maroon;
-
-  color: #eabebe;
+  color: grey;
 }

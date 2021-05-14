@@ -16,8 +16,8 @@ export default function App() {
     <Header />
     <Jumbotron className="jumbotron">
       <DonationControl />
-      <Footer />
     </Jumbotron>
+    <Footer />
     </>
   );
 }
