@@ -21,7 +21,7 @@ export default function Header() {
           <Nav.Link as={Link} to="/home">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/find">Find Donations</Nav.Link>
+          <Nav.Link onClick={console.log("click")}href="/find">Find Donations</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link href="/form">Make a Donation</Nav.Link>
