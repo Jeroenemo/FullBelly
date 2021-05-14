@@ -9,10 +9,9 @@ export default function Header() {
     <>
     <Navbar className="nav-bar">
       <Nav fill>
-        <img 
+        <img className="header-logo"
         alt=""
         src={Logo}
-        width="25%"
         />
         <Nav.Item className="nav-item">
           <Nav.Link href="#home">Home</Nav.Link>
