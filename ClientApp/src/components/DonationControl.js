@@ -17,7 +17,8 @@ export default function DonationControl() {
   if (view === "home") {
     currentView = <Home />
   } else if (view === "find") {
-    currentView = <DonationList />
+    currentView = <DonationList
+                    donations={donations}/>
   } else if (view === "form") {
     currentView = <DonationForm
                     addDonation={handleAddingNewDonation}/>
