@@ -14,14 +14,16 @@ export default function DonationControl() {
 
   let currentView = view;
 
-  if (view === "home") {
-    currentView = <Home />
-  } else if (view === "find") {
-    currentView = <DonationList
-                    donations={donations}/>
-  } else if (view === "form") {
-    currentView = <DonationForm
-                    addDonation={handleAddingNewDonation}/>
+  switch(view) {
+    case "home":
+      currentView = <Home />
+      break;
+    case "find":
+      currentView = <DonationList donations={donations} />
+      break;
+    case "form":
+      currentView = <DonationForm addDonation={handleAddingNewDonation}/>
+      break;
   }
   return (
     <>
