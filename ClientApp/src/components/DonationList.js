@@ -1,7 +1,7 @@
 import React from 'react';
 import Donation from './Donation';
 import GoogleMaps from './GoogleMaps';
-import { Row, Col } from 'react-bootstrap';
+import { ListGroup, Row, Col } from 'react-bootstrap';
 
 export default function DonationList({ donations }) {
 
@@ -9,13 +9,17 @@ export default function DonationList({ donations }) {
     <>
     <Row>
       <Col>
+      <ListGroup variant="flush">
         {donations.map((donation, index) => (
-          <Donation
-            key={index}
-            index={index}
-            donation={donation}
-          />
+          <ListGroup.Item>
+            <Donation
+              key={index}
+              index={index}
+              donation={donation}
+            />
+          </ListGroup.Item>
         ))};
+      </ListGroup>
       </Col>
       <Col>
         <GoogleMaps />
