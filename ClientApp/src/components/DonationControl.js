@@ -5,7 +5,12 @@ import DonationList from './DonationList';
 import DonationForm from './DonationForm';
 
 export default function DonationControl() {
-  const {view, setView} = useContext(Context);
+  const {view, setView, donations, setDonations} = useContext(Context);
+
+  const handleAddingNewDonation = (donation) => {
+    const newDonations = [...donations, {donation}];
+    setDonations(newDonations)
+  }
 
   let currentView = view;
 
@@ -14,7 +19,8 @@ export default function DonationControl() {
   } else if (view === "find") {
     currentView = <DonationList />
   } else if (view === "form") {
-    currentView = <DonationForm />
+    currentView = <DonationForm
+                    addDonation={handleAddingNewDonation}/>
   }
   return (
     <>

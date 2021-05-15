@@ -4,11 +4,16 @@ const Context = React.createContext();
 
 function ContextProvider({children}) {
   const [view, setView] = useState('home');
+  const [donations, setDonations] = useState([
+    { donation: "cheese" }
+  ]);
 
   return (
     <Context.Provider value={{
       view: view,
-      setView: setView
+      setView: setView,
+      donations: donations,
+      setDonations: setDonations
     }}>
       {children}
     </Context.Provider>
