@@ -12,7 +12,7 @@ export default function DonationForm({ addDonation }) {
 
   return (
     <>
-      <form onNewDonationCreation={handleFormSubmission}>
+      <form onSubmit={handleFormSubmission}>
         <input 
           type="text"
           className="input"
