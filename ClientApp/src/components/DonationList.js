@@ -10,9 +10,9 @@ export default function DonationList({ donations }) {
     <>
     <Row>
       <Container className="donation-list">
-        <Col>
+        <Col className="donations">
           {donations.map((donation, index) => (
-            <Accordion>
+            <Accordion key={index}>
               <Card>
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="text" eventKey="0">
@@ -25,7 +25,7 @@ export default function DonationList({ donations }) {
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                   <Card.Body>
-
+                    <p>I'm sick of these poopies on my mother effing stoopies</p>
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
