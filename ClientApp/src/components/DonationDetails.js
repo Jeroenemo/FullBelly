@@ -5,13 +5,13 @@ export default function DonationDetails({ donation }) {
   return (
     <>
       <p>
-        {donation.donor}
+        Contact: {donation.donor}
       </p>
       <p>
-        {donation.donation}
+        Donation: {donation.donation}
       </p>
       <p>
-        {donation.address}
+        Location: {donation.address}
       </p>
     </>
   )
