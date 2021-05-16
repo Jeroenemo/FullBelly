@@ -5,7 +5,7 @@ const Context = React.createContext();
 function ContextProvider({children}) {
   const [view, setView] = useState('home');
   const [donations, setDonations] = useState([
-    { donation: "cheese" }
+    { donor: "Jeroen", donation: "cheese", address: "8445 55th Ave S", city: "Seattle", state: "WA", zip: "98118" }
   ]);
 
   return (

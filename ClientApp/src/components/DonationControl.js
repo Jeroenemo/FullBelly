@@ -8,7 +8,7 @@ export default function DonationControl() {
   const {view, setView, donations, setDonations} = useContext(Context);
 
   const handleAddingNewDonation = (donation) => {
-    const newDonations = [...donations, {donation}];
+    const newDonations = [...donations, donation];
     setDonations(newDonations)
   }
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 } from 'uuid';
 import { Button, Card, Col , Form } from 'react-bootstrap';
 
 export default function DonationForm({ addDonation }) {
@@ -6,68 +7,57 @@ export default function DonationForm({ addDonation }) {
   
   const handleFormSubmission = (event) => {
     event.preventDefault();
-    if (!value) return;
-    addDonation(value);
-    setValue("");
+    addDonation({
+      donor: event.target.donor.value,
+      donation: event.target.donation.value,
+      address: event.target.address.value,
+      city: event.target.city.value,
+      state: event.target.state.value,
+      zip: event.target.state.value,
+      if: v4()
+    })
   }
 
   return (
     <>
     <Card className="form-card">
-      <form onSubmit={handleFormSubmission}>
-        <input 
-          type="text"
-          className="input"
-          value={value}
-          onChange={event => setValue(event.target.value)}/>
-      </form>
-      <Form>
+      <Form onSubmit={handleFormSubmission}>
         <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+          <Form.Group as={Col} controlId="donor">
+            <Form.Label>Contact or Organization</Form.Label>
+            <Form.Control type="text" placeholder="Who are you?" />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+          <Form.Group as={Col} controlId="donation">
+            <Form.Label>Donation</Form.Label>
+            <Form.Control type="text" placeholder="What are you donating?" />
           </Form.Group>
         </Form.Row>
 
-        <Form.Group controlId="formGridAddress1">
+        <Form.Group controlId="address">
           <Form.Label>Address</Form.Label>
           <Form.Control placeholder="1234 Main St" />
         </Form.Group>
-
-        <Form.Group controlId="formGridAddress2">
-          <Form.Label>Address 2</Form.Label>
-          <Form.Control placeholder="Apartment, studio, or floor" />
-        </Form.Group>
-
         <Form.Row>
-          <Form.Group as={Col} controlId="formGridCity">
+          <Form.Group as={Col} controlId="city">
             <Form.Label>City</Form.Label>
             <Form.Control />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridState">
+          <Form.Group as={Col} controlId="state">
             <Form.Label>State</Form.Label>
             <Form.Control as="select" defaultValue="Choose...">
               <option>Choose...</option>
-              <option>...</option>
+              <option>WA</option>
             </Form.Control>
           </Form.Group>
 
-          <Form.Group as={Col} controlId="formGridZip">
+          <Form.Group as={Col} controlId="zip">
             <Form.Label>Zip</Form.Label>
             <Form.Control />
           </Form.Group>
         </Form.Row>
-
-        <Form.Group id="formGridCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-
+        
         <Button variant="primary" type="submit">
           Submit
         </Button>

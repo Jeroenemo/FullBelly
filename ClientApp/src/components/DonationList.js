@@ -1,5 +1,6 @@
 import React from 'react';
 import Donation from './Donation';
+import DonationDetails from './DonationDetails';
 import GoogleMaps from './GoogleMaps';
 import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import './../styles/DonationList.css'
@@ -8,6 +9,7 @@ export default function DonationList({ donations }) {
 
   return (
     <>
+    {console.log(donations)}
     <Row>
       <Container className="donation-list">
         <Col className="donations">
@@ -25,7 +27,8 @@ export default function DonationList({ donations }) {
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                   <Card.Body>
-                    <p>I'm sick of these poopies on my mother effing stoopies</p>
+                    <DonationDetails
+                      donation={donation} />
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
