@@ -5,30 +5,29 @@ import { Button, Card, Col , Form } from 'react-bootstrap';
 export default function DonationForm({ addDonation }) {
   const {setView} = useContext(Context);
   
-  const handleFormSubmission = (event) => {
+  const handleFormSubmission = async (event) => {
     event.preventDefault();
+    event.persist();
     let lat;
     let lng;
     let query = (event.target.address.value + " " + event.target.city.value + " " + event.target.state.value + " " + event.target.zip.value).toString().replace(/ /g, '%20')
-    console.log(query)
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=AIzaSyACuXIcFZ6_5jS_4iGreRIN3GQEIPKlP8E`)
+    await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=AIzaSyACuXIcFZ6_5jS_4iGreRIN3GQEIPKlP8E`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          console.log(jsonifiedResponse.results[0].geometry.location.lng)
           lat = jsonifiedResponse.results[0].geometry.location.lat
           lng = jsonifiedResponse.results[0].geometry.location.lng
         })
-        addDonation({
-          donor: event.target.donor.value,
-          donationName: event.target.donation.value,
-          address: event.target.address.value,
-          city: event.target.city.value,
-          state: event.target.state.value,
-          zip: event.target.zip.value,
-          lat: lat,
-          lng: lng
-        })
+      await addDonation({
+        donor: event.target.donor.value,
+        donationName: event.target.donation.value,
+        address: event.target.address.value,
+        city: event.target.city.value,
+        state: event.target.state.value,
+        zip: event.target.zip.value,
+        lat: lat,
+        lng: lng
+      });
     return setView('home')
   }
 
