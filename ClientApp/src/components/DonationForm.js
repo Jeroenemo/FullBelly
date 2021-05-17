@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Context } from './../context/fullbellyContext';
-import { v4 } from 'uuid';
 import { Button, Card, Col , Form } from 'react-bootstrap';
 
 export default function DonationForm({ addDonation }) {
@@ -10,12 +9,11 @@ export default function DonationForm({ addDonation }) {
     event.preventDefault();
     addDonation({
       donor: event.target.donor.value,
-      donation: event.target.donation.value,
+      donationName: event.target.donation.value,
       address: event.target.address.value,
       city: event.target.city.value,
       state: event.target.state.value,
       zip: event.target.state.value,
-      if: v4()
     })
     return setView('home')
   }
