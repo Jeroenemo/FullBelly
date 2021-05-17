@@ -19,10 +19,11 @@ export default function DonationControl() {
       currentView = <Home />
       break;
     case "find":
-      currentView = <DonationList donations={donations} />
+      currentView = <DonationList />
       break;
     case "form":
-      currentView = <DonationForm addDonation={handleAddingNewDonation}/>
+      currentView = <DonationForm 
+        addDonation={handleAddingNewDonation} />
       break;
   }
   return (

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { Context } from './../context/fullbellyContext';
 import { v4 } from 'uuid';
 import { Button, Card, Col , Form } from 'react-bootstrap';
 
 export default function DonationForm({ addDonation }) {
-  const [value, setValue] = useState("");
+  const {setView} = useContext(Context);
   
   const handleFormSubmission = (event) => {
     event.preventDefault();
@@ -16,6 +17,7 @@ export default function DonationForm({ addDonation }) {
       zip: event.target.state.value,
       if: v4()
     })
+    return setView('home')
   }
 
   return (

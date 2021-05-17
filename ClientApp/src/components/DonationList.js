@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { Context } from './../context/fullbellyContext';
 import Donation from './Donation';
 import DonationDetails from './DonationDetails';
 import GoogleMaps from './GoogleMaps';
 import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import './../styles/DonationList.css'
 
-export default function DonationList({ donations }) {
+export default function DonationList() {
+  const {view, setView, donations, setDonations} = useContext(Context);
 
   return (
     <>

@@ -3,14 +3,16 @@ using System;
 using FullBelly.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FullBelly.Migrations
 {
     [DbContext(typeof(FullBellyContext))]
-    partial class FullBellyContextModelSnapshot : ModelSnapshot
+    [Migration("20210516205330_initia")]
+    partial class initia
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
