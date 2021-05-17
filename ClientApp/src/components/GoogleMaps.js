@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
+
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
@@ -32,23 +33,28 @@ export class MapContainer extends Component {
   };
 
   render() {
+    const { donations } = this.props;
     return (
       <Map
         google={this.props.google}
-        zoom={14}
+        zoom={12}
         style={mapStyles}
         initialCenter={
           {
-            lat: -1.2884,
-            lng: 36.8233
+            lat: 47.6062,
+            lng: -122.3321
           }
         }
       >
-        <Marker
-          onClick={this.onMarkerClick}
-          name={'Kenyatta International Convention Centre'}
-          position={ {lat: -34.397, lng: 150.644} }
-        />
+        {console.log(donations)}
+        {donations.map((donation, index) => (
+          <Marker
+            onClick={this.onMarkerClick}
+            name={donation.donationName}
+            position={ {lat: donation.lat, lng: donation.lng} }
+          />
+
+        ))}
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}

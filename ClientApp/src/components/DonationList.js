@@ -38,7 +38,8 @@ export default function DonationList() {
         </Col>
       </Container>
       <Col>
-        <GoogleMaps />
+        <GoogleMaps
+          donations={donations} />
       </Col>
     </Row>
     </>
