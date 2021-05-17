@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using FullBelly.Models;
 
-namespace FullBellyAPI.Controllers
+namespace FullBelly.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class DonationsController : ControllerBase
     {
         private readonly FullBellyContext _db;
