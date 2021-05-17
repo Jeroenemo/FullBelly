@@ -12,7 +12,6 @@ export default function DonationList() {
   return (
     <>
     <Row>
-      {console.log(donations[donations.length-1])}
       <Container className="donation-list">
         <Col className="donations">
           {donations.map((donation, index) => (
