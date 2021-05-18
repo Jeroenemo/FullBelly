@@ -7,7 +7,7 @@ import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import './../styles/DonationList.css'
 
 export default function DonationList() {
-  const { donations } = useContext(Context);
+  const {donations} = useContext(Context);
 
   return (
     <>

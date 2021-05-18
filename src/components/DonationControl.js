@@ -5,7 +5,7 @@ import DonationList from './DonationList';
 import DonationForm from './DonationForm';
 
 export default function DonationControl() {
-  const {view, setView, donations, setDonations} = useContext(Context);
+  const {view, donations, setDonations} = useContext(Context);
 
   useEffect(() => {
     let mounted = true;
@@ -33,7 +33,13 @@ export default function DonationControl() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(donation)
-      }).then(data => data.json());
+      })
+      .then(data => data.json())
+      .catch((error) => {
+        console.log(error)
+      })
+
+
   }
 
   let currentView = view;

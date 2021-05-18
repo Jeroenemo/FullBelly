@@ -18,6 +18,9 @@ export default function DonationForm({ addDonation }) {
           lat = jsonifiedResponse.results[0].geometry.location.lat
           lng = jsonifiedResponse.results[0].geometry.location.lng
         })
+      .catch((error) => {
+        console.log(error)
+      })
       await addDonation({
         donor: event.target.donor.value,
         donationName: event.target.donation.value,
