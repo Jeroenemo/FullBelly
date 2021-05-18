@@ -49,8 +49,10 @@ export class MapContainer extends Component {
         {console.log(donations)}
         {donations.map((donation, index) => (
           <Marker
+            key={index}
             onClick={this.onMarkerClick}
-            name={donation.donationName}
+            name={donation.donor}
+            donation={donation.donationName}
             position={ {lat: donation.lat, lng: donation.lng} }
           />
 
@@ -62,6 +64,7 @@ export class MapContainer extends Component {
         >
           <div>
             <h4>{this.state.selectedPlace.name}</h4>
+            <h4>{this.state.selectedPlace.donation}</h4>
           </div>
         </InfoWindow>
       </Map>
@@ -70,5 +73,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyACuXIcFZ6_5jS_4iGreRIN3GQEIPKlP8E'
+  // apiKey:
 })(MapContainer);
