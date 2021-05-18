@@ -1,11 +1,11 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
 
-const clientId = `${process.env.YOUR_CLIENT_ID}`;
+const clientId = '563181395121-hanlc6g1gqp652gmrj77p8psu9o2jfgq.apps.googleusercontent.com';
 
 export default function Login()  {
   const onSuccess = (response) => {
-    console.log('[LOGIN SUCCESS] currentUser:', res.preofileObj);
+    console.log('[LOGIN SUCCESS] currentUser:', response.profileObj);
   };
 
   const onFailure = (response) => {
