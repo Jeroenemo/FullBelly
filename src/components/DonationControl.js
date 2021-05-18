@@ -9,7 +9,7 @@ export default function DonationControl() {
 
   useEffect(() => {
     let mounted = true;
-    fetch(`https://localhost:5001/api/Donations`)
+    fetch(`http://localhost:5000/api/Donations`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
@@ -27,7 +27,7 @@ export default function DonationControl() {
   const handleAddingNewDonation = (donation) => {
     const newDonations = [...donations, donation];
     setDonations(newDonations);
-    fetch('https://localhost:5001/api/Donations', {
+    fetch('http://localhost:5000/api/Donations', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

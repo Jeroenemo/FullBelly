@@ -8,7 +8,7 @@ export default function Login()  {
   const onSuccess = (response) => {
     console.log('[LOGIN SUCCESS] currentUser:', response.profileObj);
 
-    refreshTokenSetup(response);
+    refreshTokenSetup(response)
   };
 
   const onFailure = (response) => {

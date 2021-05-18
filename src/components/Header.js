@@ -6,7 +6,7 @@ import './../styles/Header.css';
 
 export default function Header() {
   const {setView} = useContext(Context);
-
+  
   return (
     <>
     <Navbar className="nav-bar">
