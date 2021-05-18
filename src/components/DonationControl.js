@@ -14,19 +14,19 @@ export default function DonationControl() {
       .then(
         (jsonifiedResponse) => {
           if(mounted) {
-            console.log(jsonifiedResponse)
-            setDonations(jsonifiedResponse)
+            console.log(jsonifiedResponse);
+            setDonations(jsonifiedResponse);
           }
         })
       .catch((error) => {
-        console.log(error)
-    })
+        console.log(error);
+    });
     return () => mounted = false;
-  }, [])
+  }, []);
 
   const handleAddingNewDonation = (donation) => {
     const newDonations = [...donations, donation];
-    setDonations(newDonations)
+    setDonations(newDonations);
     fetch('https://localhost:5001/api/Donations', {
         method: 'POST',
         headers: {
@@ -36,11 +36,9 @@ export default function DonationControl() {
       })
       .then(data => data.json())
       .catch((error) => {
-        console.log(error)
-      })
-
-
-  }
+        console.log(error);
+      });
+  };
 
   let currentView = view;
 
