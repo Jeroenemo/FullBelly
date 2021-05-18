@@ -1,5 +1,4 @@
 import React, { Component} from 'react';
-
 import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const mapStyles = {
@@ -53,7 +52,7 @@ export class MapContainer extends Component {
             onClick={this.onMarkerClick}
             name={donation.donor}
             donation={donation.donationName}
-            position={ {lat: donation.lat, lng: donation.lng} }
+            position={{lat: donation.lat, lng: donation.lng}}
           />
 
         ))}

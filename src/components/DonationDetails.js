@@ -14,5 +14,5 @@ export default function DonationDetails({donation}) {
         Location: {donation.address}
       </p>
     </>
-  )
+  );
 }
