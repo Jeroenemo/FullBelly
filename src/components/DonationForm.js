@@ -11,7 +11,7 @@ export default function DonationForm({ addDonation }) {
     let lat;
     let lng;
     let query = (event.target.address.value + " " + event.target.city.value + " " + event.target.state.value + " " + event.target.zip.value).toString().replace(/ /g, '%20')
-    await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=AIzaSyACuXIcFZ6_5jS_4iGreRIN3GQEIPKlP8E`)
+    await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=${process.env.GOOGLE_API_KEY}`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
