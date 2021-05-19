@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Context } from './../context/fullbellyContext';
-import Donation from './Donation';
 import DonationDetails from './DonationDetails';
 import GoogleMaps from './GoogleMaps';
 import Loading from './Loading';
@@ -18,13 +17,9 @@ const DonationList = () => {
           {donations.map((donation, index) => (
             <Accordion key={index}>
               <Card>
-                <Card.Header>
+                <Card.Header className="header">
                   <Accordion.Toggle as={Button} variant="text" eventKey="0">
-                    <Donation
-                      key={index}
-                      index={index}
-                      donation={donation}
-                    />
+                    <h3>{donation.donationName}</h3>
                   </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">

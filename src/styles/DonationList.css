@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
 .donation-list {
   width: 640px;
   max-height: 600px;
@@ -7,3 +9,8 @@
   padding-right: 0;
 }
 
+.header {
+  font-family: 'Titan One', cursive;
+  color: grey;
+  text-align: center;
+}
