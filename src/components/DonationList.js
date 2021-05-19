@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
 import { Context } from './../context/fullbellyContext';
+import { withAuthenticationRequired } from '@auth0/auth0-react';
 import Donation from './Donation';
 import DonationDetails from './DonationDetails';
 import GoogleMaps from './GoogleMaps';
+import Loading from './Loading';
 import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import './../styles/DonationList.css'
 
-export default function DonationList() {
+const DonationList = () => {
   const {donations} = useContext(Context);
 
   return (
@@ -45,3 +47,7 @@ export default function DonationList() {
     </>
   );
 }
+
+export default withAuthenticationRequired(DonationList, {
+  onRedirecting: () => <Loading />,
+});

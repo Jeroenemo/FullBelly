@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { Context } from './../context/fullbellyContext';
+import { withAuthenticationRequired } from '@auth0/auth0-react';
 import { Button, Card, Col , Form } from 'react-bootstrap';
+import Loading from './Loading';
 
-export default function DonationForm({ addDonation }) {
+
+const DonationForm = ({ addDonation }) => {
   const {setView} = useContext(Context);
   
   const handleFormSubmission = async (event) => {
@@ -82,3 +85,7 @@ export default function DonationForm({ addDonation }) {
     </>
   );
 }
+
+export default withAuthenticationRequired(DonationForm, {
+  onRedirecting: () => <Loading />,
+});
