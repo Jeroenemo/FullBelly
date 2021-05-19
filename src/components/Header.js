@@ -31,6 +31,7 @@ export default function Header() {
         
           <NavDropdown title="Account">
             <NavDropdown.Item>Manage Donations</NavDropdown.Item>
+            <NavDropdown.Divider />
             <NavDropdown.Item>
               <AuthenticationButton />
             </NavDropdown.Item>
