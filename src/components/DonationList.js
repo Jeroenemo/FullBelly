@@ -19,7 +19,7 @@ const DonationList = () => {
               <Card>
                 <Card.Header className="header">
                   <Accordion.Toggle as={Button} variant="text" eventKey="0">
-                    <h3>{donation.donationName}</h3>
+                    <h3 className="donation">{donation.donationName}</h3>
                   </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
