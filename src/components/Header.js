@@ -29,7 +29,7 @@ export default function Header() {
         </Nav.Item>
 
         
-          <NavDropdown title="Manage">
+          <NavDropdown title="Account">
             <NavDropdown.Item>Manage Donations</NavDropdown.Item>
             <NavDropdown.Item>
               <AuthenticationButton />

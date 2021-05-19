@@ -14,6 +14,8 @@ export class MapContainer extends Component {
     activeMarker: {},
     selectedPlace: {}  
   };
+  
+  
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
@@ -72,5 +74,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  // apiKey:
+  // apiKey: 
 })(MapContainer);

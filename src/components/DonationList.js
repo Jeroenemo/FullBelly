@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Context } from './../context/fullbellyContext';
-import { withAuthenticationRequired } from '@auth0/auth0-react';
 import Donation from './Donation';
 import DonationDetails from './DonationDetails';
 import GoogleMaps from './GoogleMaps';
@@ -48,6 +47,4 @@ const DonationList = () => {
   );
 }
 
-export default withAuthenticationRequired(DonationList, {
-  onRedirecting: () => <Loading />,
-});
+export default DonationList;
