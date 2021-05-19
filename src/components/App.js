@@ -19,7 +19,6 @@ export default function App() {
     <Jumbotron>
       {loading}
     </Jumbotron>
-    <AuthenticationButton />
     <Footer />
     </>
   );
