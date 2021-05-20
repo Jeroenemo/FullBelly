@@ -47,13 +47,22 @@ export class MapContainer extends Component {
           }
         }
       >
-        {console.log(donations)}
+
         {donations.map((donation, index) => (
           <Marker
             key={index}
             onClick={this.onMarkerClick}
-            name={donation.donor}
             donation={donation.donationName}
+            donor={donation.donor}
+            quantity={donation.quantity}
+            date={donation.date}
+            startTime={donation.startTime}
+            endTime={donation.endTime}
+            address={donation.address}
+            city={donation.city}
+            state={donation.state}
+            zip={donation.zip}
+            description={donation.description}
             position={{lat: donation.lat, lng: donation.lng}}
           />
 
@@ -64,8 +73,22 @@ export class MapContainer extends Component {
           onClose={this.onClose}
         >
           <div>
-            <h4>{this.state.selectedPlace.name}</h4>
-            <h4>{this.state.selectedPlace.donation}</h4>
+            <h4><u>{this.state.selectedPlace.donation}</u></h4>
+            <p>
+              <strong>Who:</strong> {this.state.selectedPlace.donor}
+            </p>
+            <p>
+              <strong>What:</strong> {this.state.selectedPlace.donation} X {this.state.selectedPlace.quantity}
+            </p>
+            <p>
+            <strong>When:</strong> {this.state.selectedPlace.date} at {this.state.selectedPlace.startTime} until {this.state.selectedPlace.endTime}
+            </p>
+            <p>
+            <strong>Location:</strong> {this.state.selectedPlace.address} {this.state.selectedPlace.city} {this.state.selectedPlace.state}, {this.state.selectedPlace.zip}
+            </p>
+            <p>
+            <strong>Description:</strong> {this.state.selectedPlace.description}
+            </p>
           </div>
         </InfoWindow>
       </Map>
@@ -74,5 +97,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-
+  
 })(MapContainer);

@@ -11,10 +11,10 @@ export default function DonationDetails({donation}) {
         <strong>What:</strong> {donation.donationName} X {donation.quantity}
       </p>
       <p>
-      <strong>When:</strong>{donation.date.slice()} at {donation.startTime} until {donation.endTime}
+      <strong>When:</strong> {donation.date} at {donation.startTime} until {donation.endTime}
       </p>
       <p>
-      <strong>Location:</strong> {donation.address}
+      <strong>Location:</strong> {donation.address} {donation.city} {donation.state}, {donation.zip}
       </p>
       <p>
       <strong>Description:</strong> {donation.description}

@@ -23,7 +23,7 @@ const DonationForm = ({ addDonation }) => {
     let lng;
     const key = process.env.GOOGLE_API_KEY
     let query = (event.target.address.value + " " + event.target.city.value + " " + event.target.state.value + " " + event.target.zip.value).toString().replace(/ /g, '%20')
-    await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&key=`)
+    await fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${query}&`)
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
@@ -42,7 +42,7 @@ const DonationForm = ({ addDonation }) => {
         city: event.target.city.value,
         state: event.target.state.value,
         zip: event.target.zip.value,
-        date: date,
+        date: date.toString('MM/DD/YYYY').slice(0, 10),
         startTime: startTime,
         endTime: endTime,
         lat: lat,
