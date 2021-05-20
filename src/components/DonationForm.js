@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Context } from './../context/fullbellyContext';
-import { withAuthenticationRequired } from '@auth0/auth0-react';
-import { Button, Card, Col , Form } from 'react-bootstrap';
+import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
+import { Button, Col , Form } from 'react-bootstrap';
 import DatePicker from 'react-datepicker';
 import TimePicker from 'react-time-picker';
 import Loading from './Loading';
@@ -10,6 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 
 const DonationForm = ({ addDonation }) => {
+  const { user } = useAuth0();
   const {setView} = useContext(Context);
   const [date, setDate] = useState(new Date());
   const [startTime, setStartTime] = useState('10:00');
@@ -46,7 +47,8 @@ const DonationForm = ({ addDonation }) => {
         startTime: startTime,
         endTime: endTime,
         lat: lat,
-        lng: lng
+        lng: lng,
+        user: user.name
       });
     return setView('home')
   }

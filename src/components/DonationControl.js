@@ -3,6 +3,7 @@ import { Context } from './../context/fullbellyContext';
 import Home from './Home';
 import DonationList from './DonationList';
 import DonationForm from './DonationForm';
+import ManageDonations from './ManageDonations';
 
 export default function DonationControl() {
   const {view, donations, setDonations} = useContext(Context);
@@ -53,6 +54,8 @@ export default function DonationControl() {
       currentView = <DonationForm 
         addDonation={handleAddingNewDonation} />
       break;
+    case "manage":
+      currentView = <ManageDonations />
   }
   return (
     <>
