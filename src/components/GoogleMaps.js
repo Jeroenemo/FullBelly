@@ -10,21 +10,21 @@ const mapStyles = {
 
 export class MapContainer extends Component {
   state = {
-    selectedPlace: false,
     activeMarker: {},
-    selectedPlace: {}  
+    selectedPlace: {},
+    showingInfoWindow: false
   };
   
   
 
-  onMarkerClick = (props, marker, e) =>
+  onMarkerClick = (props, marker) =>
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true
     });
 
-  onClose = props => {
+  onClose = () => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -37,6 +37,7 @@ export class MapContainer extends Component {
     const { donations } = this.props;
     return (
       <Map
+        className ="map-styles"
         google={this.props.google}
         zoom={12}
         style={mapStyles}
@@ -97,5 +98,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  
+
 })(MapContainer);
