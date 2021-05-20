@@ -37,13 +37,14 @@ const DonationForm = ({ addDonation }) => {
         city: event.target.city.value,
         state: event.target.state.value,
         zip: event.target.zip.value,
-        date: event.target.date.value,
+        date: event.target.date.value.slice(5, 10),
         startTime: event.target.startTime.value,
         endTime: event.target.endTime.value,
         lat: lat,
         lng: lng,
         user: user.name
       });
+      console.log(event.target.startTime.value)
     return setView('home')
   }
 
