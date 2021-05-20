@@ -2,8 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Context } from './../context/fullbellyContext';
 import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 import { Button, Col , Form } from 'react-bootstrap';
-import DatePicker from 'react-datepicker';
-import TimePicker from 'react-time-picker';
 import Loading from './Loading';
 import './../styles/DonationForm.css';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -12,9 +10,6 @@ import 'react-datepicker/dist/react-datepicker.css';
 const DonationForm = ({ addDonation }) => {
   const { user } = useAuth0();
   const {setView} = useContext(Context);
-  const [date, setDate] = useState(new Date());
-  const [startTime, setStartTime] = useState('10:00');
-  const [endTime, setEndTime] = useState('12:00');
   
   const handleFormSubmission = async (event) => {
     event.preventDefault();
@@ -42,9 +37,9 @@ const DonationForm = ({ addDonation }) => {
         city: event.target.city.value,
         state: event.target.state.value,
         zip: event.target.zip.value,
-        date: date.toString('MM/DD/YYYY').slice(0, 10),
-        startTime: startTime,
-        endTime: endTime,
+        date: event.target.date.value,
+        startTime: event.target.startTime.value,
+        endTime: event.target.endTime.value,
         lat: lat,
         lng: lng,
         user: user.name
@@ -80,17 +75,17 @@ const DonationForm = ({ addDonation }) => {
         <Form.Row>
           <Form.Group as={Col} controlId="date">
             <Form.Label>Date</Form.Label>
-              <DatePicker className="picker" selected={date} onChange={date => setDate(date)} required /> 
+            <Form.Control type="date" name="date" required />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="start-time">
+          <Form.Group as={Col} controlId="startTime">
             <Form.Label>Start Time: </Form.Label>
-              <TimePicker className="picker"  onChange={setStartTime} value={startTime} required />
+            <Form.Control type="time" name="startTime" required />
           </Form.Group>
 
-          <Form.Group as={Col} controlId="end-time">
+          <Form.Group as={Col} controlId="endTime">
             <Form.Label>End Time: </Form.Label>
-            <TimePicker className="picker"  onChange={setEndTime} value={endTime} required />
+            <Form.Control type="time" name="endTime" required />
           </Form.Group>
         </Form.Row>
 
