@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Context } from './../context/fullbellyContext';
 import DonationDetails from './DonationDetails';
 import GoogleMaps from './GoogleMaps';
@@ -7,7 +7,24 @@ import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import './../styles/DonationList.css'
 
 const DonationList = () => {
-  const {donations} = useContext(Context);
+  const {donations, setDonations} = useContext(Context);
+
+  useEffect(() => {
+    let mounted = true;
+    fetch(`http://localhost:5000/api/Donations`)
+      .then(response => response.json())
+      .then(
+        (jsonifiedResponse) => {
+          if(mounted) {
+            console.log(jsonifiedResponse);
+            setDonations(jsonifiedResponse);
+          }
+        })
+      .catch((error) => {
+        console.log(error);
+    });
+    return () => mounted = false;
+  }, []);
 
   return (
     <>

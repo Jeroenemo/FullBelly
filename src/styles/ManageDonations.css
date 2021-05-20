@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+
+.default {
+  text-align: center;
+  margin-top: 15%;
+  font-family: 'Titan One', cursive;
+  color: grey;
+}

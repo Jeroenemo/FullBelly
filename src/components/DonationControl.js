@@ -8,23 +8,6 @@ import ManageDonations from './ManageDonations';
 export default function DonationControl() {
   const {view, donations, setDonations} = useContext(Context);
 
-  useEffect(() => {
-    let mounted = true;
-    fetch(`http://localhost:5000/api/Donations`)
-      .then(response => response.json())
-      .then(
-        (jsonifiedResponse) => {
-          if(mounted) {
-            console.log(jsonifiedResponse);
-            setDonations(jsonifiedResponse);
-          }
-        })
-      .catch((error) => {
-        console.log(error);
-    });
-    return () => mounted = false;
-  }, []);
-
   const handleAddingNewDonation = (donation) => {
     const newDonations = [...donations, donation];
     setDonations(newDonations);
@@ -39,7 +22,19 @@ export default function DonationControl() {
       .catch((error) => {
         console.log(error);
       });
-  };
+  }
+
+  const handleRemovingDonation = (id) => {
+    const newDonations = donations.filter(donation => donation.donationId !== id);
+    fetch(`http://localhost:5000/api/Donations/${id}`, {
+      method: 'DELETE',
+    })
+    .then(console.log("SUCCESS"))
+    .catch((error) => {
+      console.log(error);
+    });
+    return setDonations(newDonations)
+  }
 
   let currentView = view;
 
@@ -55,7 +50,8 @@ export default function DonationControl() {
         addDonation={handleAddingNewDonation} />
       break;
     case "manage":
-      currentView = <ManageDonations />
+      currentView = <ManageDonations
+        deleteDonation={handleRemovingDonation} />
   }
   return (
     <>
