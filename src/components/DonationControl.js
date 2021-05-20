@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Context } from './../context/fullbellyContext';
 import Home from './Home';
 import DonationList from './DonationList';
@@ -37,7 +37,6 @@ export default function DonationControl() {
   }
 
   let currentView = view;
-
   switch(view) {
     case "home":
       currentView = <Home />
