@@ -1,4 +1,16 @@
-.picker {
-  color:grey;
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+.form-button {
+  font-family: 'Lilita One', cursive;
+  font-size: 1.6rem;
+  margin-bottom: -3%;
+  margin-left: 44%;
+  background-color: #9b2343;
+  border: #9b2343;
+  transition: background-color 0.1s ease-in-out;
+  padding: 5px 40px 5px 40px;
 }
 
+.button:hover {
+  background-color: #681a2f;
+}

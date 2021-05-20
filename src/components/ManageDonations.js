@@ -2,11 +2,13 @@ import React, { useContext } from 'react';
 import { Context } from './../context/fullbellyContext';
 import DonationDetails from './DonationDetails';
 import { Accordion, Button, Card } from 'react-bootstrap';
-import './../styles/ManageDonations.css'
+import { withAuthenticationRequired } from '@auth0/auth0-react';
+import Loading from './Loading';
+import './../styles/ManageDonations.css';
 
 import { useAuth0 } from "@auth0/auth0-react";
 
-const Profile = ({deleteDonation}) => {
+const ManageDonations = ({deleteDonation}) => {
   const {donations} = useContext(Context);
   const { user } = useAuth0();
 
@@ -21,14 +23,15 @@ const Profile = ({deleteDonation}) => {
           <Card>
             <Card.Header className="header">
               <Accordion.Toggle as={Button} variant="text" eventKey="0" onClick={console.log(index)}>
-                <h3 className="donation">{donation.donationName}</h3>
+                <h3>{donation.donationName}</h3>
               </Accordion.Toggle>
+              <button className="button" type="submit" onClick={() => deleteDonation(donation.donationId)}>Delete</button>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <DonationDetails
                   donation={donation} />
-                <button type="submit" onClick={() => deleteDonation(donation.donationId)}>WOO</button>
+                
               </Card.Body>
             </Accordion.Collapse>
           </Card>
@@ -38,4 +41,6 @@ const Profile = ({deleteDonation}) => {
   );
 };
 
-export default Profile;
+export default withAuthenticationRequired(ManageDonations, {
+  onRedirecting: () => <Loading />,
+});

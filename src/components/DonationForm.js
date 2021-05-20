@@ -76,17 +76,17 @@ const DonationForm = ({ addDonation }) => {
         <Form.Row>
           <Form.Group as={Col} controlId="date">
             <Form.Label>Date</Form.Label>
-            <Form.Control type="date" name="date" required />
+            <Form.Control className="picker" type="date" name="date" required />
           </Form.Group>
 
           <Form.Group as={Col} controlId="startTime">
-            <Form.Label>Start Time: </Form.Label>
-            <Form.Control type="time" name="startTime" required />
+            <Form.Label>Start Time</Form.Label>
+            <Form.Control className="picker" type="time" name="startTime" required />
           </Form.Group>
 
           <Form.Group as={Col} controlId="endTime">
-            <Form.Label>End Time: </Form.Label>
-            <Form.Control type="time" name="endTime" required />
+            <Form.Label>End Time</Form.Label>
+            <Form.Control className="picker" type="time" name="endTime" required />
           </Form.Group>
         </Form.Row>
 
@@ -115,7 +115,7 @@ const DonationForm = ({ addDonation }) => {
           </Form.Group>
         </Form.Row>
           
-        <Button variant="primary" type="submit">
+        <Button className="form-button" type="submit">
           Submit
         </Button>
       </Form>

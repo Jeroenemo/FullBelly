@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 .main-logo {
   Display: flex;
@@ -10,6 +10,6 @@
 
 .slogan {
   text-align: center;
-  font-family: 'Titan One', cursive;
+  font-family: 'Lilita One', cursive;
   color: grey;
 }
