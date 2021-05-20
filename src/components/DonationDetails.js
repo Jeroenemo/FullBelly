@@ -5,13 +5,19 @@ export default function DonationDetails({donation}) {
   return (
     <>
       <p>
-        Contact: {donation.donor}
+        <strong>Who:</strong> {donation.donor}
       </p>
       <p>
-        Donation: {donation.donation}
+        <strong>What:</strong> {donation.donationName} X {donation.quantity}
       </p>
       <p>
-        Location: {donation.address}
+      <strong>When:</strong>{donation.date.slice()} at {donation.startTime} until {donation.endTime}
+      </p>
+      <p>
+      <strong>Location:</strong> {donation.address}
+      </p>
+      <p>
+      <strong>Description:</strong> {donation.description}
       </p>
     </>
   );

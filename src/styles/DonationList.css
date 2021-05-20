@@ -12,7 +12,7 @@
 .header {
   font-family: 'Titan One', cursive;
   color: grey;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .donation {
