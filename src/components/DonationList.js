@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from 'react';
 import { Context } from './../context/fullbellyContext';
 import DonationDetails from './DonationDetails';
 import GoogleMaps from './GoogleMaps';
-import Loading from './Loading';
 import { Accordion, Button, Card, Col, Container, Row } from 'react-bootstrap';
 import './../styles/DonationList.css'
 
