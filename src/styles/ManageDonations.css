@@ -4,12 +4,15 @@
   margin-top: 15%;
   font-family: 'Lilita One', cursive;
   color: grey;
+  /* transition: background-color 0.1s ease-in-out; */
 }
 
+/* .default :hover {
+  color: rgb(81, 80, 80);
+} */
 .button {
   border-radius: 5px;
   font-size: 1.5rem;
-  margin-left: 80%;
   color: white;
   background-color: #9b2343;
   border: #9b2343;
@@ -19,4 +22,4 @@
 
 .button:hover {
   background-color: #681a2f;
-}
+} 

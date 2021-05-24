@@ -11,9 +11,14 @@
 .header {
   font-family: 'Lilita One', cursive;
   color: grey;
+  transition: background-color 0.1s ease-in-out;
   /* text-align: center; */
 }
 
 .donation {
   color: grey;
+}
+
+.header :hover {
+  color: rgb(81, 80, 80);
 }
