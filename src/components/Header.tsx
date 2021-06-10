@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Context } from './../context/fullbellyContext';
+import { Context } from '../context/fullbellyContext';
 import Logo from './../img/header.png';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import AuthenticationButton from './AuthenticationButton';
 import './../styles/Header.css';
 
 export default function Header() {
-  const {setView} = useContext(Context);
+  const { setView } = useContext(Context);
   
   return (
     <>
@@ -29,7 +29,7 @@ export default function Header() {
         </Nav.Item>
 
         
-          <NavDropdown title="Account">
+          <NavDropdown id="account" title="Account">
             <NavDropdown.Item onClick={() => setView('manage')}>Manage Donations</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item>

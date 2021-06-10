@@ -4,7 +4,7 @@ import { useAuth0, withAuthenticationRequired } from '@auth0/auth0-react';
 import { Button, Col , Form } from 'react-bootstrap';
 import Loading from './Loading';
 import './../styles/DonationForm.css';
-import 'react-datepicker/dist/react-datepicker.css';
+// import 'react-datepicker/dist/react-datepicker.css';
 
 
 const DonationForm = ({ addDonation }) => {

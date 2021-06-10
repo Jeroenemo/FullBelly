@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 
-const Context = React.createContext();
+interface FullBellyContext {
+  view: string;
+  donations: any[];
+  setView: (view: string) => void;
+  setDonations: (donations: any[]) => void;
+}
+
+const Context = React.createContext<FullBellyContext>(null);
 
 function ContextProvider({children}) {
   const [view, setView] = useState('home');

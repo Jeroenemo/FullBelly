@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import DonationControl from './DonationControl';
 import Footer from './Footer';
 import Header from './Header';
@@ -10,7 +10,7 @@ import './../styles/App.css';
 export default function App() {
   const { isLoading } = useAuth0();
 
-  let loading = (isLoading) ? <Loading /> : <DonationControl />;
+  let loading: ReactNode = (isLoading) ? <Loading /> : <DonationControl />;
 
   return (
     <>

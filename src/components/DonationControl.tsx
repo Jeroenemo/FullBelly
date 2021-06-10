@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Context } from './../context/fullbellyContext';
+import React, { ReactNode, useContext } from 'react';
+import { Context } from '../context/fullbellyContext';
 import Home from './Home';
 import DonationList from './DonationList';
 import DonationForm from './DonationForm';
@@ -29,14 +29,14 @@ export default function DonationControl() {
     fetch(`http://localhost:5000/api/Donations/${id}`, {
       method: 'DELETE',
     })
-    .then(console.log("SUCCESS"))
+    // .then(console.log("SUCCESS"))
     .catch((error) => {
       console.log(error);
     });
     return setDonations(newDonations)
   }
 
-  let currentView = view;
+  let currentView: ReactNode;
   switch(view) {
     case "home":
       currentView = <Home />
