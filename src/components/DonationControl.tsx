@@ -8,7 +8,7 @@ import ManageDonations from './ManageDonations';
 export default function DonationControl() {
   const {view, donations, setDonations} = useContext(Context);
 
-  const handleAddingNewDonation = (donation) => {
+  const handleAddingNewDonation = (donation: {}) => {
     const newDonations = [...donations, donation];
     setDonations(newDonations);
     fetch('http://localhost:5000/api/Donations', {
